@@ -9,12 +9,8 @@ using Random = UnityEngine.Random;
 
 public class UI : MonoBehaviour
 {
-    // [SerializeField] UIMessage messagePrefab;
-    // [SerializeField] UIMessagePopup messagePopupPrefab;
-    //[SerializeField] RectTransform messagesRoot;
-    [SerializeField] TextMeshProUGUI gliderTouchdownCounter;
-    //public static TextMeshProUGUI CREW_COUNT;
-    //public TextMeshProUGUI CrewCount;
+    [SerializeField] GameObject uiGliderPrefab;
+    [SerializeField] TextMeshProUGUI gliderTouchdownCounterTMP;
 
     public static UI Instance { get; private set; }
 
@@ -28,18 +24,35 @@ public class UI : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
-        //gliderTouchdownCounter = 3;
-        //this.modifyGroundedCounter(5);
-        //gameObject.transform.Find("glider-frak").gameObject.active
+    void Start()
+    {
+        this.setGliderCountTarget(Stage.Instance.gliderTargetCount);
     }
 
     public void modifyGroundedCounter(int num)
     {
-        int counter = System.Convert.ToInt32(gliderTouchdownCounter.text);
+        int counter = System.Convert.ToInt32(gliderTouchdownCounterTMP.text);
         counter += num;
-        gliderTouchdownCounter.text = counter.ToString();
+        gliderTouchdownCounterTMP.text = counter.ToString();
 
     }
 
+    public void setGliderCountTarget(int num)
+    {
+        float spawnHeight = 50;
+
+        for (int i = 0; i < num; i++)
+        {
+            GameObject newUiGlider;
+            newUiGlider = Instantiate(uiGliderPrefab, uiGliderPrefab.transform);
+            newUiGlider.transform.SetParent(uiGliderPrefab.transform.parent);
+            newUiGlider.GetComponent<RectTransform>().anchoredPosition = new Vector2(50, spawnHeight);
+
+            newUiGlider.active = true;
+            spawnHeight += 70;
+
+        }
+    }
 }
