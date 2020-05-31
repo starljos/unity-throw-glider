@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -180, y: -135.3}
+  m_AnchoredPosition: {x: -180, y: -135.29999}
   m_SizeDelta: {x: 121.30005, y: 82.6}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &9008352172604789161
@@ -191,7 +191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -146, y: -195}
+  m_AnchoredPosition: {x: -146, y: -135.29999}
   m_SizeDelta: {x: 317.09998, y: 82.6}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4319045421941422537
@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 7514217184882716569}
   - component: {fileID: 7514217184882716570}
   - component: {fileID: 7514217184882716571}
+  - component: {fileID: 2794706206026521281}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -414,6 +415,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2794706206026521281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514217184882716548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3013ce47076d30c43b70332976b36104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7514217185082520121
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +439,7 @@ GameObject:
   - component: {fileID: 7514217185082520126}
   - component: {fileID: 7514217185082520127}
   m_Layer: 5
-  m_Name: gliders-grounded-count
+  m_Name: glider-touchdown-counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,7 +461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 69, y: -135.3}
+  m_AnchoredPosition: {x: 69, y: -102.399994}
   m_SizeDelta: {x: 121.3, y: 82.6}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &7514217185082520126
@@ -605,7 +618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 85, y: 72.2}
+  m_AnchoredPosition: {x: 77.099976, y: 72.20001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5518793315229847382
