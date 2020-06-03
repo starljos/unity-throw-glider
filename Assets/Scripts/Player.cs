@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public Glider CurrentGlider;
     public GameObject gliderPrefab;
-    
+
     void Start()
     {
         this.spawnGlider();
@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             CurrentGlider.releaseGlider();
+
+            UI.Instance.glidersToRelease -= 1;
+            UI.Instance.markTopUiGliderDone();
             StartCoroutine(SpawnGliderAfterDelay(1));
         }
     }

@@ -25,6 +25,7 @@ public class Glider : MonoBehaviour
         {
             //Debug.Log("Collision with Glider");
             this.crashGlider();
+            GameFlow.Instance.loose();
         }
     }
 

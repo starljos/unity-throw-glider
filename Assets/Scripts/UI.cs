@@ -11,6 +11,8 @@ public class UI : MonoBehaviour
 {
     [SerializeField] GameObject uiGliderPrefab;
     [SerializeField] TextMeshProUGUI gliderTouchdownCounterTMP;
+    [SerializeField] Color uiGliderDoneColor;
+    [SerializeField] public int glidersToRelease;
 
     public static UI Instance { get; private set; }
 
@@ -29,6 +31,20 @@ public class UI : MonoBehaviour
     void Start()
     {
         this.setGliderCountTarget(Stage.Instance.gliderTargetCount);
+        glidersToRelease = Stage.Instance.gliderTargetCount + 1;
+    }
+
+    public void markTopUiGliderDone()
+    {
+
+        GameObject curUiGlider;
+        curUiGlider = GameObject.Find("glider-count-target/UI Glider " + glidersToRelease);
+        curUiGlider.GetComponent<Image>().color = uiGliderDoneColor;
+
+        //Debug.Log(gameObject.transform.Find("UI Glider 3").gameObject.GetComponent<Image>().color);
+
+
+
     }
 
     public void modifyGroundedCounter(int num)
@@ -50,6 +66,7 @@ public class UI : MonoBehaviour
             newUiGlider.transform.SetParent(uiGliderPrefab.transform.parent);
             newUiGlider.GetComponent<RectTransform>().anchoredPosition = new Vector2(50, spawnHeight);
 
+            newUiGlider.name = "UI Glider " + (i + 1);
             newUiGlider.active = true;
             spawnHeight += 70;
 
