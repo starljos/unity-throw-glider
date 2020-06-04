@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public Glider CurrentGlider;
     public GameObject gliderPrefab;
+    public bool isGliderReady;
 
     void Start()
     {
@@ -14,9 +15,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (isGliderReady && Input.GetKeyDown("space"))
         {
             CurrentGlider.releaseGlider();
+            isGliderReady = false;
 
             UI.Instance.glidersToRelease -= 1;
             UI.Instance.markTopUiGliderDone();
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
         newGlider.transform.SetParent(gameObject.transform);
         CurrentGlider = newGlider.GetComponent<Glider>();
         newGlider.active = true;
+        isGliderReady = true;
 
     }
 }

@@ -40,6 +40,7 @@ public class Glider : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         gameObject.transform.SetParent(earthTransform);
         UI.Instance.modifyGroundedCounter(1);
+        Stage.Instance.modifyLandedTarget(1);
     }
 
     void crashGlider()
