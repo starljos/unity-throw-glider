@@ -41,6 +41,7 @@ public class Glider : MonoBehaviour
         gameObject.transform.SetParent(earthTransform);
         UI.Instance.modifyGroundedCounter(1);
         Stage.Instance.modifyLandedTarget(1);
+        Player.Instance.spawnGlider();
     }
 
     void crashGlider()

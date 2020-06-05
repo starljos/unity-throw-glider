@@ -960,7 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6ec7993f324714584256e1e44ee2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gliderTargetCount: 7
+  gliderTargetCount: 3
   gliderCountLanded: 0
   stageNumber: 0
 --- !u!1 &2050042093
@@ -1007,6 +1007,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2050042094, guid: 656e802305ab27a43bd99025d64a512c, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2794706206026521281, guid: 656e802305ab27a43bd99025d64a512c,
         type: 3}
       propertyPath: gliderTouchdownCounterTMP
@@ -1046,6 +1050,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890489435420648280, guid: 656e802305ab27a43bd99025d64a512c,
+        type: 3}
+      propertyPath: m_text
+      value: STAGE 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890489435420648280, guid: 656e802305ab27a43bd99025d64a512c,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890489435420648280, guid: 656e802305ab27a43bd99025d64a512c,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890489435420648280, guid: 656e802305ab27a43bd99025d64a512c,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7374301095411122953, guid: 656e802305ab27a43bd99025d64a512c,
         type: 3}

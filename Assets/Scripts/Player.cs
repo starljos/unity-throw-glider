@@ -8,6 +8,21 @@ public class Player : MonoBehaviour
     public GameObject gliderPrefab;
     public bool isGliderReady;
 
+    public static Player Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     void Start()
     {
         this.spawnGlider();
@@ -22,7 +37,7 @@ public class Player : MonoBehaviour
 
             UI.Instance.glidersToRelease -= 1;
             UI.Instance.markTopUiGliderDone();
-            StartCoroutine(SpawnGliderAfterDelay(1));
+            //StartCoroutine(SpawnGliderAfterDelay(2));
         }
     }
 
@@ -32,7 +47,7 @@ public class Player : MonoBehaviour
         this.spawnGlider();
     }
 
-    void spawnGlider()
+    public void spawnGlider()
     {
         GameObject newGlider;
         newGlider = Instantiate(gliderPrefab);
