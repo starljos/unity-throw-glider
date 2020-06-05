@@ -33,6 +33,8 @@ public class UI : MonoBehaviour
     {
         this.setGliderCountTarget(Stage.Instance.gliderTargetCount);
         glidersToRelease = Stage.Instance.gliderTargetCount + 1;
+
+        gliderTouchdownCounterTMP.text = Progress.Instance.getTotalLanded().ToString();
     }
 
     public void markTopUiGliderDone()

@@ -36,8 +36,6 @@ public class Player : MonoBehaviour
             isGliderReady = false;
 
             UI.Instance.glidersToRelease -= 1;
-            UI.Instance.markTopUiGliderDone();
-            //StartCoroutine(SpawnGliderAfterDelay(2));
         }
     }
 

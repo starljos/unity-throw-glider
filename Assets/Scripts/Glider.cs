@@ -39,8 +39,7 @@ public class Glider : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
         gameObject.transform.SetParent(earthTransform);
-        UI.Instance.modifyGroundedCounter(1);
-        Stage.Instance.modifyLandedTarget(1);
+        Progress.Instance.modifyTotalLanded(1);
         Player.Instance.spawnGlider();
     }
 

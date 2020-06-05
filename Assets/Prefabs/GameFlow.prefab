@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7303900580158957525}
   - component: {fileID: 7303900580158957524}
+  - component: {fileID: 8517001663916250294}
   m_Layer: 0
   m_Name: GameFlow
   m_TagString: Untagged
@@ -44,3 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGameOver: 0
+--- !u!114 &8517001663916250294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7303900580158957527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e99083f9423ab3469c5a5c9724f1a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
