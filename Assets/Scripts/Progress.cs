@@ -25,6 +25,10 @@ public class Progress : MonoBehaviour
     {
         return totalLanded;
     }
+    public int getTotalClouds()
+    {
+        return totalClouds;
+    }
 
     public void modifyTotalLanded(int x)
     {
@@ -32,6 +36,19 @@ public class Progress : MonoBehaviour
         UI.Instance.markTopUiGliderDone();
         UI.Instance.modifyGroundedCounter(1);
         Stage.Instance.modifyLandedTarget(1);
-        Debug.Log(totalLanded);
+        // Debug.Log(totalLanded);
+    }
+
+    public void modifyTotalClouds(int x)
+    {
+        totalClouds += x;
+        UI.Instance.modifyCloudCounter(1);
+    }
+
+    public void resetProgress()
+    {
+        totalClouds = 0;
+        totalLanded = 0;
+        
     }
 }

@@ -46,4 +46,9 @@ public class Stage : MonoBehaviour
         stageNumber += 1;
     }
 
+    public int getStageNum()
+    {
+        return stageNumber;
+    }
+
 }

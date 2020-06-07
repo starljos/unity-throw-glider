@@ -43,17 +43,28 @@ public class GameFlow : MonoBehaviour
 
     public void initNextStage()
     {
-        Debug.Log("Starting next stage");
         isGameOver = false;
-        //SceneManager.LoadScene("Throw");
         Stage.Instance.nextStageNum();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void restartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        isGameOver = false;
+    }
+    public void restartFirstStage()
+    {
+        Progress.Instance.resetProgress();
+        SceneManager.LoadScene(0);
         isGameOver = false;
     }
 }

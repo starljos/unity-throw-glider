@@ -12,7 +12,10 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject uiGliderPrefab;
     [SerializeField] GameObject uiGameOverGO;
     [SerializeField] TextMeshProUGUI gliderTouchdownCounterTMP;
+    [SerializeField] TextMeshProUGUI cloudCounterTMP;
     [SerializeField] Color uiGliderDoneColor;
+    [SerializeField] Color stageDone;
+    [SerializeField] Color stageTodo;
     [SerializeField] public int glidersToRelease;
 
     public static UI Instance { get; private set; }
@@ -35,6 +38,14 @@ public class UI : MonoBehaviour
         glidersToRelease = Stage.Instance.gliderTargetCount + 1;
 
         gliderTouchdownCounterTMP.text = Progress.Instance.getTotalLanded().ToString();
+        cloudCounterTMP.text = Progress.Instance.getTotalClouds().ToString();
+
+                // null reference goddamnit
+        // GameObject stageIndicator;
+        // stageIndicator = GameObject.Find("stage-progress/stage" + Stage.Instance.getStageNum());
+        // Debug.Log(stageIndicator);
+        // stageIndicator.GetComponent<Image>().color = stageDone;
+
     }
 
     public void markTopUiGliderDone()
@@ -49,6 +60,13 @@ public class UI : MonoBehaviour
         int counter = System.Convert.ToInt32(gliderTouchdownCounterTMP.text);
         counter += num;
         gliderTouchdownCounterTMP.text = counter.ToString();
+    }
+
+    public void modifyCloudCounter(int num)
+    {
+        int counter = System.Convert.ToInt32(cloudCounterTMP.text);
+        counter += num;
+        cloudCounterTMP.text = counter.ToString();
 
     }
 

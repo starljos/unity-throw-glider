@@ -121,6 +121,90 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &68930421
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 419649208}
+    m_Modifications:
+    - target: {fileID: 6542845160195606158, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_Name
+      value: cloud (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0933
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0816
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.026738934
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.3912227
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9202961
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -46.061
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.004999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.004999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888094376977408119, guid: 639c21c7919713e45839789d8e9c1c41,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.005
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 639c21c7919713e45839789d8e9c1c41, type: 3}
 --- !u!4 &419649208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2828338979715554952, guid: dc5c6cbc568a3e94098ce6ebbdc3ad72,
@@ -516,21 +600,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 543334110}
-    - target: {fileID: 6890489435420648280, guid: 656e802305ab27a43bd99025d64a512c,
-        type: 3}
-      propertyPath: m_text
-      value: STAGE 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6890489435420648280, guid: 656e802305ab27a43bd99025d64a512c,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6890489435420648280, guid: 656e802305ab27a43bd99025d64a512c,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7514217184882716548, guid: 656e802305ab27a43bd99025d64a512c,
         type: 3}
       propertyPath: m_Name
