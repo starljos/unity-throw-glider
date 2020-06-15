@@ -11,12 +11,15 @@ public class UI : MonoBehaviour
 {
     [SerializeField] GameObject uiGliderPrefab;
     [SerializeField] GameObject uiGameOverGO;
+    [SerializeField] GameObject curUiGlider;
     [SerializeField] TextMeshProUGUI gliderTouchdownCounterTMP;
     [SerializeField] TextMeshProUGUI cloudCounterTMP;
     [SerializeField] Color uiGliderDoneColor;
     [SerializeField] Color stageDone;
     [SerializeField] Color stageTodo;
-    [SerializeField] public int glidersToRelease;
+    [SerializeField] int glidersToRelease;
+
+    public Color UiGliderDoneColor { get; set; }
 
     public static UI Instance { get; private set; }
 
@@ -34,35 +37,28 @@ public class UI : MonoBehaviour
 
     void Start()
     {
-        this.setGliderCountTarget(Stage.Instance.gliderTargetCount);
+        SetGliderCountTarget(Stage.Instance.gliderTargetCount);
         glidersToRelease = Stage.Instance.gliderTargetCount + 1;
 
-        gliderTouchdownCounterTMP.text = Progress.Instance.getTotalLanded().ToString();
-        cloudCounterTMP.text = Progress.Instance.getTotalClouds().ToString();
-
-                // null reference goddamnit
-        // GameObject stageIndicator;
-        // stageIndicator = GameObject.Find("stage-progress/stage" + Stage.Instance.getStageNum());
-        // Debug.Log(stageIndicator);
-        // stageIndicator.GetComponent<Image>().color = stageDone;
+        gliderTouchdownCounterTMP.text = Progress.Instance.GetTotalLanded().ToString();
+        cloudCounterTMP.text = Progress.Instance.GetTotalClouds().ToString();
 
     }
 
-    public void markTopUiGliderDone()
+    public void MarkTopUiGliderDone()
     {
-        GameObject curUiGlider;
         curUiGlider = GameObject.Find("glider-count-target/UI Glider " + glidersToRelease);
         curUiGlider.GetComponent<Image>().color = uiGliderDoneColor;
     }
 
-    public void modifyGroundedCounter(int num)
+    public void ModifyGroundedCounter(int num)
     {
         int counter = System.Convert.ToInt32(gliderTouchdownCounterTMP.text);
         counter += num;
         gliderTouchdownCounterTMP.text = counter.ToString();
     }
 
-    public void modifyCloudCounter(int num)
+    public void ModifyCloudCounter(int num)
     {
         int counter = System.Convert.ToInt32(cloudCounterTMP.text);
         counter += num;
@@ -70,7 +66,7 @@ public class UI : MonoBehaviour
 
     }
 
-    public void setGliderCountTarget(int num)
+    public void SetGliderCountTarget(int num)
     {
         float spawnHeight = 50;
 
@@ -88,17 +84,32 @@ public class UI : MonoBehaviour
         }
     }
 
-    public void toggleGameOverUi()
+    public void ActivateGameOverUi()
     {
-        Debug.Log(uiGameOverGO.active);
 
         if (uiGameOverGO.active == false)
         {
             uiGameOverGO.active = true;
         }
-        else
+    }
+
+    public void DeactivateGameOverUi()
+    {
+
+        if (uiGameOverGO.active == true)
         {
             uiGameOverGO.active = false;
         }
+    }
+
+
+    public void InitRestart()
+    {
+        GameFlow.Instance.RestartFirstStage();
+    }
+
+    public void ModifyGlidersToRelease(int num)
+    {
+        glidersToRelease += num;
     }
 }

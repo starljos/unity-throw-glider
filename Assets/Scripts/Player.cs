@@ -22,30 +22,29 @@ public class Player : MonoBehaviour
         }
     }
 
-
     void Start()
     {
-        this.spawnGlider();
+        SpawnGlider();
     }
 
     void Update()
     {
         if (isGliderReady && Input.GetKeyDown("space"))
         {
-            CurrentGlider.releaseGlider();
+            CurrentGlider.ReleaseGlider();
             isGliderReady = false;
 
-            UI.Instance.glidersToRelease -= 1;
+            UI.Instance.ModifyGlidersToRelease(-1);
         }
     }
 
     IEnumerator SpawnGliderAfterDelay(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        this.spawnGlider();
+        SpawnGlider();
     }
 
-    public void spawnGlider()
+    public void SpawnGlider()
     {
         GameObject newGlider;
         newGlider = Instantiate(gliderPrefab);

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Progress : MonoBehaviour
 {
-    [SerializeField] public static int totalLanded;
-    [SerializeField] public static int totalClouds;
+    [SerializeField] static int totalLanded;
+    [SerializeField] static int totalClouds;
 
     public static Progress Instance { get; private set; }
 
@@ -21,31 +21,31 @@ public class Progress : MonoBehaviour
         }
     }
 
-    public int getTotalLanded()
+    public int GetTotalLanded()
     {
         return totalLanded;
     }
-    public int getTotalClouds()
+    public int GetTotalClouds()
     {
         return totalClouds;
     }
 
-    public void modifyTotalLanded(int x)
+    public void ModifyTotalLanded(int x)
     {
         totalLanded += x;
-        UI.Instance.markTopUiGliderDone();
-        UI.Instance.modifyGroundedCounter(1);
-        Stage.Instance.modifyLandedTarget(1);
+        UI.Instance.MarkTopUiGliderDone();
+        UI.Instance.ModifyGroundedCounter(1);
+        Stage.Instance.ModifyLandedTarget(1);
         // Debug.Log(totalLanded);
     }
 
-    public void modifyTotalClouds(int x)
+    public void ModifyTotalClouds(int x)
     {
         totalClouds += x;
-        UI.Instance.modifyCloudCounter(1);
+        UI.Instance.ModifyCloudCounter(1);
     }
 
-    public void resetProgress()
+    public void ResetProgress()
     {
         totalClouds = 0;
         totalLanded = 0;

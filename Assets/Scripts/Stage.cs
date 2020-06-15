@@ -6,7 +6,7 @@ public class Stage : MonoBehaviour
 {
     [SerializeField] public int gliderTargetCount;
     [SerializeField] public int gliderCountLanded;
-    [SerializeField] public int stageNumber;
+    [SerializeField] int stageNumber;
 
     public static Stage Instance { get; private set; }
 
@@ -28,25 +28,30 @@ public class Stage : MonoBehaviour
         gliderCountLanded = 0;
     }
 
-    public void modifyLandedTarget(int x)
+    public void ModifyLandedTarget(int x)
     {
         gliderCountLanded += x;
-        this.isStageCompleted();
+        IsStageCompleted();
     }
 
-    void isStageCompleted()
+    public void ModifyTarget(int x)
+    {
+        gliderTargetCount += x;
+    }
+
+    void IsStageCompleted()
     {
         if (gliderCountLanded == gliderTargetCount)
         {
-            GameFlow.Instance.win();
+            GameFlow.Instance.Win();
         }
     }
-    public void nextStageNum()
+    public void NextStageNum()
     {
         stageNumber += 1;
     }
 
-    public int getStageNum()
+    public int GetStageNum()
     {
         return stageNumber;
     }

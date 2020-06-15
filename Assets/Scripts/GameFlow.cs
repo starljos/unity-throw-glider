@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameFlow : MonoBehaviour
 {
     public static GameFlow Instance { get; private set; }
-    [SerializeField] public bool isGameOver;
+    [SerializeField] bool isGameOver;
 
     void Awake()
     {
@@ -25,26 +25,28 @@ public class GameFlow : MonoBehaviour
         isGameOver = false;
     }
 
-    public void win()
+    public void Win()
     {
         Debug.Log("Stage Won");
-        this.initNextStage();
+        Camera.Instance.moveCameraOut();
+        //InitNextStage();
+        StartCoroutine(LoadSceneAfterDelay(1));
     }
 
-    public void loose()
+    public void Loose()
     {
         if (!isGameOver)
         {
             Debug.Log("Stage Lost");
-            UI.Instance.toggleGameOverUi();
+            UI.Instance.ActivateGameOverUi();
             isGameOver = true;
         }
     }
 
-    public void initNextStage()
+    public void InitNextStage()
     {
         isGameOver = false;
-        Stage.Instance.nextStageNum();
+        Stage.Instance.NextStageNum();
 
         if (SceneManager.GetActiveScene().buildIndex == 4)
         {
@@ -56,15 +58,38 @@ public class GameFlow : MonoBehaviour
         }
     }
 
-    public void restartScene()
+    public void RestartScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        Camera.Instance.moveCameraOut();
+        //InitNextStage();
+        StartCoroutine(RestartSceneAfterDelay(1));
+        
         isGameOver = false;
     }
-    public void restartFirstStage()
+    public void RestartFirstStage()
     {
-        Progress.Instance.resetProgress();
+        Progress.Instance.ResetProgress();
         SceneManager.LoadScene(0);
         isGameOver = false;
+    }
+
+    public void InitRestart()
+    {
+        UI.Instance.DeactivateGameOverUi();
+        StartCoroutine(RestartSceneAfterDelay(1));
+    }
+
+
+    IEnumerator LoadSceneAfterDelay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        InitNextStage();
+    }
+
+    IEnumerator RestartSceneAfterDelay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        RestartFirstStage();
     }
 }

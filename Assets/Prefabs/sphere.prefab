@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 2828338979715554952}
   - component: {fileID: 656128073509064653}
   - component: {fileID: 419649209}
-  - component: {fileID: 419649210}
   - component: {fileID: 7912274121133813157}
   m_Layer: 0
   m_Name: sphere
@@ -182,19 +181,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.09
---- !u!114 &419649210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5073909770159700669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7388e34ceb99384d948ce1b3a3756c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 40
 --- !u!95 &7912274121133813157
 Animator:
   serializedVersion: 3

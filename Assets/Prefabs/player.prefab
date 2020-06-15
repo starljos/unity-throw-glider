@@ -605,6 +605,8 @@ MonoBehaviour:
   landClip: {fileID: 8300000, guid: 7efed8d54878cfb42b3a60548207668f, type: 3}
   crashClip: {fileID: 8300000, guid: 1a67cc7ed126511479e5390f38bf6da6, type: 3}
   coinPick: {fileID: 8300000, guid: bd4f353d0d3af3d4e811887784e6796d, type: 3}
+  gliderModelMain: {fileID: 6240159071228930712}
+  gliderModelFrak: {fileID: 3525176296307585683}
 --- !u!50 &3525176298031750128
 Rigidbody2D:
   serializedVersion: 4

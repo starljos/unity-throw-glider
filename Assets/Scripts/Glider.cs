@@ -12,6 +12,9 @@ public class Glider : MonoBehaviour
     public AudioClip crashClip;
     public AudioClip coinPick;
 
+    [SerializeField] GameObject gliderModelMain;
+    [SerializeField] GameObject gliderModelFrak;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,14 +28,14 @@ public class Glider : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             //Debug.Log("Collision with Earth");
-            this.landGlider();
+            LandGlider();
         }
 
         if (col.gameObject.tag == "Glider")
         {
             //Debug.Log("Collision with Glider");
-            this.crashGlider();
-            GameFlow.Instance.loose();
+            CrashGlider();
+            GameFlow.Instance.Loose();
         }
 
     }
@@ -44,13 +47,13 @@ public class Glider : MonoBehaviour
         if (col.gameObject.tag == "Cloud")
         {
             col.gameObject.active = false;
-            Progress.Instance.modifyTotalClouds(1);
+            Progress.Instance.ModifyTotalClouds(1);
             GetComponent<AudioSource> ().PlayOneShot (coinPick, 1);
         
         }
     }
 
-    public void releaseGlider()
+    public void ReleaseGlider()
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
         // gameObject.GetComponent<AudioSource>().Play(1);
@@ -58,21 +61,20 @@ public class Glider : MonoBehaviour
 
     }
 
-    void landGlider()
+    void LandGlider()
     {
         GetComponent<Animator>().enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
         gameObject.transform.SetParent(earthTransform);
-        Progress.Instance.modifyTotalLanded(1);
-        Player.Instance.spawnGlider();
-        //GetComponent<AudioSource> ().Stop ();
+        Progress.Instance.ModifyTotalLanded(1);
+        Player.Instance.SpawnGlider();
         GetComponent<AudioSource> ().PlayOneShot (landClip, 1);
     }
 
-    void crashGlider()
+    void CrashGlider()
     {
-        gameObject.transform.Find("glider-main").gameObject.active = false;
-        gameObject.transform.Find("glider-frak").gameObject.active = true;
+        gliderModelMain.active = false;
+        gliderModelFrak.active = true;
         GetComponent<AudioSource> ().PlayOneShot (crashClip, 1);
     }
 }
