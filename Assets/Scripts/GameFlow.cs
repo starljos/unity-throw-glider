@@ -23,6 +23,11 @@ public class GameFlow : MonoBehaviour
     void Start()
     {
         isGameOver = false;
+
+        if (Progress.currentStage == null)
+        {
+            Progress.currentStage = 1;
+        }
     }
 
     public void Win()
@@ -46,7 +51,7 @@ public class GameFlow : MonoBehaviour
     public void InitNextStage()
     {
         isGameOver = false;
-        Stage.Instance.NextStageNum();
+        Progress.Instance.NextStageNum();
 
         if (SceneManager.GetActiveScene().buildIndex == 4)
         {
@@ -64,7 +69,7 @@ public class GameFlow : MonoBehaviour
         Camera.Instance.moveCameraOut();
         //InitNextStage();
         StartCoroutine(RestartSceneAfterDelay(1));
-        
+
         isGameOver = false;
     }
     public void RestartFirstStage()
@@ -79,7 +84,6 @@ public class GameFlow : MonoBehaviour
         UI.Instance.DeactivateGameOverUi();
         StartCoroutine(RestartSceneAfterDelay(1));
     }
-
 
     IEnumerator LoadSceneAfterDelay(float seconds)
     {
