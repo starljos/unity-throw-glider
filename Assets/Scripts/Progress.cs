@@ -94,10 +94,13 @@ public class Progress : MonoBehaviour
     }
     void SetDifficulty()
     {
-        if (currentStage % 1 == 0)
-        {
-            difficulty += 1;
-            GameEvents.current.DifficultyChange();
-        }
+
+        // difficulty should correspond to animation speed multiplier
+        // 1-5 = 1
+        // 6-10 = 2 
+        // etc
+
+        difficulty = currentStage / 5 + 1;
+        GameEvents.current.DifficultyChange();
     }
 }

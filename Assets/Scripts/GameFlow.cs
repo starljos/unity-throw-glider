@@ -53,9 +53,9 @@ public class GameFlow : MonoBehaviour
         isGameOver = false;
         Progress.Instance.NextStageNum();
 
-        if (SceneManager.GetActiveScene().buildIndex == 4)
+        if (SceneManager.GetActiveScene().buildIndex == 5)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         else
         {
@@ -75,7 +75,7 @@ public class GameFlow : MonoBehaviour
     public void RestartFirstStage()
     {
         Progress.Instance.ResetProgress();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         isGameOver = false;
     }
 

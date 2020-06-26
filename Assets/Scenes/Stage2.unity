@@ -246,12 +246,12 @@ PrefabInstance:
     - target: {fileID: 8802546314229474105, guid: 13f972a3ffad5f8489643434afcc364a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.10428185
+      value: 0.0848
       objectReference: {fileID: 0}
     - target: {fileID: 8802546314229474105, guid: 13f972a3ffad5f8489643434afcc364a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0064937263
+      value: -0.0577
       objectReference: {fileID: 0}
     - target: {fileID: 8802546314229474105, guid: 13f972a3ffad5f8489643434afcc364a,
         type: 3}
@@ -318,6 +318,16 @@ PrefabInstance:
       propertyPath: earthTransform
       value: 
       objectReference: {fileID: 419649208}
+    - target: {fileID: 8802546314229474106, guid: 13f972a3ffad5f8489643434afcc364a,
+        type: 3}
+      propertyPath: gliderModelMain
+      value: 
+      objectReference: {fileID: 557968546}
+    - target: {fileID: 8802546314229474106, guid: 13f972a3ffad5f8489643434afcc364a,
+        type: 3}
+      propertyPath: gliderModelFrak
+      value: 
+      objectReference: {fileID: 557968545}
     - target: {fileID: 8802546314229474108, guid: 13f972a3ffad5f8489643434afcc364a,
         type: 3}
       propertyPath: m_Enabled
@@ -340,6 +350,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13f972a3ffad5f8489643434afcc364a, type: 3}
+--- !u!1 &557968545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8802546314796010072, guid: 13f972a3ffad5f8489643434afcc364a,
+    type: 3}
+  m_PrefabInstance: {fileID: 557968544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &557968546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2043054831141474899, guid: 13f972a3ffad5f8489643434afcc364a,
+    type: 3}
+  m_PrefabInstance: {fileID: 557968544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &602431892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -409,6 +431,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fb7bec6b13079a44b38163a4921a2ae, type: 3}
+--- !u!114 &602431893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7303900580158957524, guid: 0fb7bec6b13079a44b38163a4921a2ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 602431892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2e921791d33e04bb32c8758f353f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &668469639
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +827,7 @@ PrefabInstance:
     - target: {fileID: 1183471024, guid: 656e802305ab27a43bd99025d64a512c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 602431893}
     - target: {fileID: 1183471024, guid: 656e802305ab27a43bd99025d64a512c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InitRestart

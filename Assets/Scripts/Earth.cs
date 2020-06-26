@@ -10,10 +10,10 @@ public class Earth : MonoBehaviour
         GameEvents.onDifficultyChange += OnSpeedUpAnimation;
     }
 
-    // void OnDestroy()
-    // {
-    //     GameEvents.onDifficultyChange -= OnSpeedUpAnimation;
-    // }
+    void OnDestroy()
+    {
+        GameEvents.onDifficultyChange -= OnSpeedUpAnimation;
+    }
 
     void OnSpeedUpAnimation()
     {
@@ -21,9 +21,7 @@ public class Earth : MonoBehaviour
         if (gameObject != null)
         {
             var anim = gameObject.GetComponent<Animator>();
-
-            Debug.Log("Difficulty " + Progress.difficulty);
-            Debug.Log("Speed " + anim.speed);
+            anim.speed = Progress.difficulty;
         }
 
 
