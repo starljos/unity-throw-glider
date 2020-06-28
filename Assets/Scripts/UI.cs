@@ -15,6 +15,8 @@ public class UI : MonoBehaviour
     [SerializeField] ScoresApiController apiCOntrol;
     [SerializeField] TextMeshProUGUI gliderTouchdownCounterTMP;
     [SerializeField] TextMeshProUGUI cloudCounterTMP;
+    [SerializeField] public TextMeshProUGUI playerNameTMP;
+    [SerializeField] public TextMeshProUGUI playerNamePlaceholderTMP;
     [SerializeField] TextMeshProUGUI stageTMP;
     [SerializeField] Color uiGliderDoneColor;
     [SerializeField] Color stageDone;

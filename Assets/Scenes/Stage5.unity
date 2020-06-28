@@ -446,7 +446,7 @@ PrefabInstance:
     - target: {fileID: 8517001663916250294, guid: 0fb7bec6b13079a44b38163a4921a2ae,
         type: 3}
       propertyPath: gliderTargetCount
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fb7bec6b13079a44b38163a4921a2ae, type: 3}

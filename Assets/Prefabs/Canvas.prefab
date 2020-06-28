@@ -932,7 +932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Seba
+  m_text: Unknown Seba
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1002,10 +1002,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 8597377431382442189}
-    characterCount: 4
+    characterCount: 12
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1996,6 +1996,7 @@ MonoBehaviour:
   apiCOntrol: {fileID: 0}
   gliderTouchdownCounterTMP: {fileID: 7514217185082520127}
   cloudCounterTMP: {fileID: 8459357167099010718}
+  playerNameTMP: {fileID: 3728803157016578856}
   stageTMP: {fileID: 6890489435420648280}
   uiGliderDoneColor: {r: 0, g: 0, b: 0, a: 1}
   stageDone: {r: 1, g: 0.6039216, b: 0.14901961, a: 1}
