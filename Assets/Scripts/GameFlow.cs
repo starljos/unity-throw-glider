@@ -85,6 +85,18 @@ public class GameFlow : MonoBehaviour
         StartCoroutine(RestartSceneAfterDelay(1));
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+        
+    }
+
+    public void QuitToMenu()
+    {
+        StartCoroutine(QuitToMenuAfterDelay(1));
+        
+    }
+
     IEnumerator LoadSceneAfterDelay(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -95,5 +107,10 @@ public class GameFlow : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         RestartFirstStage();
+    }
+    IEnumerator QuitToMenuAfterDelay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(0);
     }
 }

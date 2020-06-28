@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoresApiController : MonoBehaviour
 {
@@ -16,12 +18,68 @@ public class ScoresApiController : MonoBehaviour
 
     private readonly string getRecordUrl = "https://dev81817.service-now.com/api/x_84446_unityglide/unityscores/get_top";
     private readonly string getAllUrl = "https://dev81817.service-now.com/api/x_84446_unityglide/unityscores/get_all";
+    private readonly string postScoreUrl = "https://dev81817.service-now.com/api/x_84446_unityglide/unityscores/post_score";
     //private readonly string nextMazdaURL = "https://dev81817.service-now.com//api/x_84446_advertrack/advert/getnextmazda/";
     private string currentMazdaSysId = "";
 
     private void Start()
     {
-        StartCoroutine(GetRecord(getAllUrl));
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            StartCoroutine(GetRecord(getAllUrl));
+        }
+
+    }
+
+    public void PostScore()
+    {
+
+        StartCoroutine(PostScoreRequest());
+    }
+
+
+    IEnumerator PostScoreRequest()
+    {
+
+
+        var score = new ScoreInfo
+        {
+            name = "Seba",
+            points = Progress.Instance.GetTotalLanded(),
+            bonusPoints = 1,
+            stage = 1
+        };
+
+        // JavaScriptSerializer serializer = new JavaScriptSerializer();
+        // string jsonData =  serializer.Serialize(data);
+
+        string jsonDataString = JsonUtility.ToJson(score);
+        // Debug.Log(jsonDataString);
+        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(jsonDataString);
+
+
+
+
+
+        string authorization = authenticate("score_bot", "kawa");
+        string endpoint = postScoreUrl;
+
+        UnityWebRequest request = UnityWebRequest.Put(endpoint, bytes);
+        request.SetRequestHeader("AUTHORIZATION", authorization);
+        request.SetRequestHeader("X-HTTP-Method-Override", "PUT");
+        request.SetRequestHeader("accept", "application/json; charset=UTF-8");
+        request.SetRequestHeader("content-type", "application/json; charset=UTF-8");
+
+        yield return request.SendWebRequest();
+
+        if (request.isNetworkError || request.isHttpError)
+        {
+            Debug.LogError(request.error);
+            yield break;
+        }
+        Debug.Log(request.downloadHandler.text);
+
     }
 
     public void OnButtonRecord()
@@ -43,11 +101,9 @@ public class ScoresApiController : MonoBehaviour
 
         // authenticate
         string authorization = authenticate("score_bot", "kawa");
+        string ApiUrl = endpoint;
 
-
-        string MazdamonURL = endpoint;
-
-        UnityWebRequest SnWebRequest = UnityWebRequest.Get(MazdamonURL);
+        UnityWebRequest SnWebRequest = UnityWebRequest.Get(ApiUrl);
         SnWebRequest.SetRequestHeader("AUTHORIZATION", authorization);
 
         yield return SnWebRequest.SendWebRequest();
@@ -69,7 +125,7 @@ public class ScoresApiController : MonoBehaviour
             // place values
             // push down
             // actiate
-            Debug.Log(score.name);
+            //Debug.Log(score.name);
             name.text = score.name;
             position.text = score.position.ToString();
             points.text = score.points.ToString();

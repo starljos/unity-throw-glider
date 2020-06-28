@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject uiGliderPrefab;
     [SerializeField] GameObject uiGameOverGO;
     [SerializeField] GameObject curUiGlider;
+    [SerializeField] ScoresApiController apiCOntrol;
     [SerializeField] TextMeshProUGUI gliderTouchdownCounterTMP;
     [SerializeField] TextMeshProUGUI cloudCounterTMP;
     [SerializeField] TextMeshProUGUI stageTMP;
@@ -107,7 +108,12 @@ public class UI : MonoBehaviour
 
     public void InitRestart()
     {
-        GameFlow.Instance.RestartFirstStage();
+        GameFlow.Instance.InitRestart();
+    }
+
+    public void QuitToMenu()
+    {
+        GameFlow.Instance.QuitToMenu();
     }
 
     public void ModifyGlidersToRelease(int num)
